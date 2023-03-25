@@ -1,0 +1,9 @@
+# .clippy.toml
+
+# 禁用掉指定的 lint
+[lints]
+blacklisted-lint-name = "deny"
+
+# 设置所有警告级别的 lint 为错误级别
+[pedantic]
+warn = false
