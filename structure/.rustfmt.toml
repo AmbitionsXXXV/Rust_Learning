@@ -1,0 +1,7 @@
+# .rustfmt.toml
+
+# 设置缩进宽度为 4
+tab_spaces = 2
+
+# 设置每行最大字符数为 100
+max_width = 90
