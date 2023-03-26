@@ -1,3 +1,8 @@
+// #![allow(clippy::approx_constant)]
+// #[warn(clippy::no_effect)]
+
+use std::f64::consts;
+
 fn apply(value: i32, f: fn(i32) -> i32) -> i32 {
   f(value)
 }
@@ -11,11 +16,12 @@ fn cube(value: i32) -> i32 {
 }
 
 fn pi() -> f64 {
-  3.1415926
+  // 3.1415926
+  consts::PI
 }
 
 fn not_pi() {
-  3.1415926;
+  3.1415926
 }
 
 fn main() {

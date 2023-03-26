@@ -1,0 +1,8 @@
+[workspace]
+
+members = [
+  "structure",
+  "html2md",
+  "rsfunction",
+  "cycle"
+]
