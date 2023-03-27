@@ -1,5 +1,5 @@
 [package]
-name = "etc"
+name = "2-function"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,6 +7,3 @@ edition = "2021"
 
 [dependencies]
 rustfmt = "0.10.0"
-clippy = "0.0.302"
-reqwest = { version = "0.11",features = ["blocking"]}
-html2md = "0.2"

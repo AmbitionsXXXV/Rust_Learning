@@ -1,8 +1,8 @@
 [workspace]
 
 members = [
-  "structure",
-  "html2md",
-  "function",
-  "cycle"
+  "1-html2md",
+  "2-function",
+  "3-structure",
+  "4-cycle"
 ]
