@@ -3,6 +3,6 @@
 members = [
   "structure",
   "html2md",
-  "rsfunction",
+  "function",
   "cycle"
 ]
