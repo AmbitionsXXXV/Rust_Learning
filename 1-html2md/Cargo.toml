@@ -1,5 +1,5 @@
 [package]
-name = "1-html2md"
+name = "html2md"
 version = "0.1.0"
 edition = "2021"
 
