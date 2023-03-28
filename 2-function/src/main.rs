@@ -1,5 +1,4 @@
-// #![allow(clippy::approx_constant)]
-// #[warn(clippy::no_effect)]
+#![allow(clippy::approx_constant)]
 
 use std::f64::consts;
 
@@ -20,7 +19,7 @@ fn pi() -> f64 {
   consts::PI
 }
 
-fn not_pi() {
+fn not_pi() -> f64 {
   3.1415926
 }
 
@@ -33,9 +32,7 @@ fn main() {
 
   println!(
     "is_pi: {:?}, is_unit1: {:?}, is_unit2: {:?}",
-    is_pi,
-    is_unit1,
-    is_unit2,
+    is_pi, is_unit1, is_unit2,
   );
   println!("apply square: {}", apply(2, square));
   println!("apply cube: {}", apply(2, cube));

@@ -1,11 +1,11 @@
 use std::error::Error;
-use std::{ fs, env };
+use std::{env, fs};
 
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
   let contents = fs::read_to_string(config.filename)?;
   let results = if config.case_sensitive {
     search(&config.query, &contents)
-  }else {
+  } else {
     search_case_insensitive(&config.query, &contents)
   };
 
@@ -17,7 +17,7 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 }
 
 pub struct Config {
-  pub query: String, 
+  pub query: String,
   pub filename: String,
   pub case_sensitive: bool,
 }
@@ -31,7 +31,11 @@ impl Config {
     let filename = args[2].clone();
     let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
 
-    Ok(Config { query, filename, case_sensitive })
+    Ok(Config {
+      query,
+      filename,
+      case_sensitive,
+    })
   }
 }
 
@@ -60,7 +64,6 @@ pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a st
   results
 }
 
-
 #[cfg(test)]
 mod tests {
   use super::*;
@@ -84,6 +87,9 @@ Rust:
 safe, fast, productive.
 Pick three.
 Trust aimyon.";
-    assert_eq!(vec!["Rust:", "Trust"], search_case_insensitive(query, contents))
+    assert_eq!(
+      vec!["Rust:", "Trust"],
+      search_case_insensitive(query, contents)
+    )
   }
 }
